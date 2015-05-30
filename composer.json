@@ -11,7 +11,8 @@
     ],
     "require": {
         "PHP": ">=5.3",
-        "sntools/core": "*"
+        "sntools/core": "*",
+        "twig/twig": "*"
     },
     "autoload": {
         "psr-4": {
