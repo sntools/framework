@@ -1,8 +1,6 @@
 source:
     - src
     - vendor/sntools/core/src
-exclude:
-    - src/Fallback
 destination: docs
 title: "SNFramework : Framework for Man-Machine interfaces"
 charset:

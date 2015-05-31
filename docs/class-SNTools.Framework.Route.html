@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class SNTools\Framework\Route | SNFramework : Framework for Man-Machine interfaces</title>
+
+	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li class="active">
+					<a href="namespace-SNTools.html">
+						SNTools<span></span>
+					</a>
+
+						<ul>
+				<li class="active">
+					<a href="namespace-SNTools.Framework.html">
+						Framework					</a>
+
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-SNTools.Framework.Application.html">Application</a></li>
+				<li><a href="class-SNTools.Framework.BackController.html">BackController</a></li>
+				<li><a href="class-SNTools.Framework.Component.html">Component</a></li>
+				<li><a href="class-SNTools.Framework.Config.html">Config</a></li>
+				<li><a href="class-SNTools.Framework.Engine.html">Engine</a></li>
+				<li><a href="class-SNTools.Framework.HTTPRequest.html">HTTPRequest</a></li>
+				<li><a href="class-SNTools.Framework.HTTPResponse.html">HTTPResponse</a></li>
+				<li class="active"><a href="class-SNTools.Framework.Route.html">Route</a></li>
+			</ul>
+
+
+
+			<h3>Exceptions</h3>
+			<ul>
+				<li><a href="class-SNTools.Framework.ClassNotFoundException.html">ClassNotFoundException</a></li>
+				<li><a href="class-SNTools.Framework.ConfigurationException.html">ConfigurationException</a></li>
+				<li><a href="class-SNTools.Framework.EngineException.html">EngineException</a></li>
+				<li><a href="class-SNTools.Framework.InvalidClassException.html">InvalidClassException</a></li>
+				<li><a href="class-SNTools.Framework.InvalidDirectoryException.html">InvalidDirectoryException</a></li>
+				<li><a href="class-SNTools.Framework.NoRouteException.html">NoRouteException</a></li>
+				<li><a href="class-SNTools.Framework.UndefinedActionException.html">UndefinedActionException</a></li>
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-SNTools.Framework.html" title="Summary of SNTools\Framework"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+				<li>
+					<a href="annotation-group-todo.html" title="List of elements with todo annotation">
+						<span>Todo</span>
+					</a>
+				</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="-API-documentation.zip" title="Download documentation as ZIP archive"><span>Download</span></a>
+			</li>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Route</h1>
+
+
+	<div class="description">
+	<p>Route descriptor. Also checks if requested url matches expected url.</p>
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+			<a href="class-SNTools.Object.html"><span>SNTools\Object</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+			<a href="class-SNTools.Framework.Component.html"><span>SNTools\Framework\Component</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:60px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>SNTools\Framework\Route</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		<b>Final</b><br>
+		
+		<b>Namespace:</b> <a href="namespace-SNTools.html">SNTools</a>\<a href="namespace-SNTools.Framework.html">Framework</a><br>
+		
+
+				<b>Author:</b>
+				Darth Killer<br>
+				<b>Version:</b>
+				2.0-dev<br>
+			<b>Located at</b> <a href="source-class-SNTools.Framework.Route.html#4-99" title="Go to source code">Route.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-SNTools.Framework.Route.html#44-62" title="Go to source code">__construct</a>( <span><code><a href="class-SNTools.Framework.Application.html">SNTools\Framework\Application</a></code> <var>$app</var></span>, <span>string <var>$url</var></span>, <span>string <var>$controller</var></span>, <span>string <var>$action</var></span>, <span>string|null <var>$view</var> = <span class="php-keyword1">null</span></span>, <span>array <var>$varnames</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+		<div class="description short">
+			<p>Route constructor</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Route constructor</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$app</var></dt>
+					<dd>Parent application</dd>
+					<dt><var>$url</var></dt>
+					<dd>URL to recognize when matching with requested URL.</dd>
+					<dt><var>$controller</var></dt>
+					<dd>Controller class name (with namespace) to use with this route</dd>
+					<dt><var>$action</var></dt>
+					<dd>Controller action to call with this route</dd>
+					<dt><var>$view</var></dt>
+					<dd>View associated with this route and controller action. Null if N/A.</dd>
+					<dt><var>$varnames</var></dt>
+					<dd><p>Name list of variables to recognize within requested url.
+Variables are detected upon matching the route, and added to the request object as parameters.</p></dd>
+				</dl></div>
+
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><a href="class-SNTools.Framework.Component.html">SNTools\Framework\Component</a></code><br>
+				</div>
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-SNTools.Framework.Component.html#___construct">SNTools\Framework\Component::__construct()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__get" id="___get">
+
+		<td class="attributes"><code>
+			 public 
+
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___get">#</a>
+		<code><a href="source-class-SNTools.Framework.Route.html#64-81" title="Go to source code">__get</a>( <span>string <var>$name</var></span> )</code>
+
+		<div class="description short">
+			<p>Property getters handler</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Property getters handler</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd>Property name</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					mixed<br>Property value
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					DomainException
+				</div>
+
+				<h4>See</h4>
+				<div class="list">
+						Controller::__get()<br>
+				</div>
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-SNTools.Framework.Component.html#___get">SNTools\Framework\Component::__get()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="match" id="_match">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_match">#</a>
+		<code><a href="source-class-SNTools.Framework.Route.html#83-98" title="Go to source code">match</a>( )</code>
+
+		<div class="description short">
+			<p>Matches requested URL with the URL stored within the route.
+If variables are expected, will also combine stored variable names with detected values and
+add them to the request object, as parameters.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Matches requested URL with the URL stored within the route.
+If variables are expected, will also combine stored variable names with detected values and
+add them to the request object, as parameters.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean<br>Requested URL matches the route's expected URL.
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-SNTools.Object.html#methods">SNTools\Object</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-SNTools.Object.html#___constructStatic">__constructStatic()</a>, 
+			<a href="class-SNTools.Object.html#___isset">__isset()</a>, 
+			<a href="class-SNTools.Object.html#___set">__set()</a>, 
+			<a href="class-SNTools.Object.html#___toString">__toString()</a>, 
+			<a href="class-SNTools.Object.html#___unset">__unset()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary properties" id="magicProperties">
+	<caption>Magic properties summary</caption>
+	<tr data-order="controller" id="m$controller">
+		<td class="attributes"><code>
+			public  read-only
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-SNTools.Framework.Route.html#9" title="Go to source code"><var>$controller</var></a>
+
+			<div class="description short">
+				<p>Controller class name (with namespace) to use with this route</p>
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+	</tr>
+	<tr data-order="action" id="m$action">
+		<td class="attributes"><code>
+			public  read-only
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-SNTools.Framework.Route.html#10" title="Go to source code"><var>$action</var></a>
+
+			<div class="description short">
+				<p>Controller action to call with this route</p>
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+	</tr>
+	<tr data-order="view" id="m$view">
+		<td class="attributes"><code>
+			public  read-only
+			string|null
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-SNTools.Framework.Route.html#11" title="Go to source code"><var>$view</var></a>
+
+			<div class="description short">
+				<p>View associated with this route and controller action. Null if N/A.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Magic properties inherited from <a href="class-SNTools.Framework.Component.html#properties">SNTools\Framework\Component</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-SNTools.Framework.Component.html#m$app"><var>$app</var></a>
+		</code></td>
+	</tr>
+	</table>
+
+
+</div>
+
+	<div id="footer">
+		SNFramework : Framework for Man-Machine interfaces API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>
