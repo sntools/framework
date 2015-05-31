@@ -26,7 +26,7 @@ class FallbackApp extends Application {
     public function __construct() {
         parent::__construct();
         $this->config->addDir('.', 'appdir');
-        $this->config->addDir('cache', 'appdir', true);
+        $this->config->addDir('../../cache', 'appdir', true);
         $this->controller = new Controller404($this, new \SNTools\Framework\Route($this, '.*', __NAMESPACE__ . '\\Controller404', '404', '404.twig'));
     }
     
