@@ -17,8 +17,8 @@
     },
     "autoload": {
         "psr-4": {
-            "SNTools\\Framework\\": "src/",
-            "SNTools\\Framework\\Fallback\\": "fallback/"
+            "SNTools\\Framework\\Fallback\\": "fallback/",
+            "SNTools\\Framework\\": "src/"
         }
     },
     "require-dev": {
