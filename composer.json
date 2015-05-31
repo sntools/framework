@@ -2,6 +2,7 @@
     "name": "sntools/framework",
     "description": "Man-Machine Interface framework, using MVC",
     "type": "library",
+    "license": "MIT",
     "keywords": ["framework", "interface", "mvc"],
     "authors": [
         {
