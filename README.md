@@ -6,10 +6,10 @@ This particular package brings the Man-Machine Interface framework : MVC-oriente
 
 # Download
 
-The easiest way to download the core tools is through Composer. Simply add the following to your composer requirements, where "dev-master" can be replaced by any version you need :
+The easiest way to download the core tools is through Composer. Simply add the following to your composer requirements, where "~1.0" can be replaced by any version you need :
 
 ```
-"sntools/framework": "dev-master"
+"sntools/framework": "~1.0"
 ```
 
 # The idea behind the interface framework
