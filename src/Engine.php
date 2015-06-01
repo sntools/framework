@@ -30,7 +30,7 @@ final class Engine {
     private static function load($configpath) {
         if(!file_exists($configpath))
             throw new EngineException('Config file not found : ' . $configpath);
-        $xsd = __DIR__ . '/config.xsd';
+        $xsd = __DIR__ . '/../config.xsd';
         if(!file_exists($xsd))
             throw new EngineException('Config schema not found : ' . $xsd);
         $config = new \DOMDocument;
