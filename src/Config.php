@@ -64,7 +64,7 @@ final class Config extends Component implements \IteratorAggregate, \ArrayAccess
                 $prefix = $this->app->applicationDir();
                 break;
             case self::PATHDIR_DOCROOT:
-                $prefix = filter_input(INPUT_SERVER, 'DOCUMENT_ROOT');
+                $prefix = $_SERVER['DOCUMENT_ROOT'];
                 break;
             case self::PATHDIR_NONE:
             default:
