@@ -10,4 +10,4 @@ accessLevels:
     - protected
 tree: no
 todo: yes
-download: yes
+download: no
