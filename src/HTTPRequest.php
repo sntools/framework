@@ -1,5 +1,6 @@
 <?php
 namespace SNTools\Framework;
+use SNTools\Filter\FilterInput;
 
 /**
  * HTTP Request descriptor.
@@ -26,11 +27,12 @@ class HTTPRequest extends Component {
      * @see Component::__get()
      */
     public function __get($name) {
+        $filter = new FilterInput();
         switch($name) {
             case 'method':
-                return $_SERVER['REQUEST_METHOD'];
+                return $filter->filter(FilterInput::SERVER, 'REQUEST_METHOD');
             case 'uri':
-                return $_SERVER['REQUEST_URI'];
+                return $filter->filter(FilterInput::SERVER, 'REQUEST_URI');
             default:
                 return parent::__get($name);
         }
@@ -39,11 +41,12 @@ class HTTPRequest extends Component {
     /**
      * Factorisation method : parameter getter for GET, POST and COOKIE parameters
      * @param string $name Parameter name
-     * @param int $input Filter input constant
+     * @param int $input FilterInput class constant
      * @return mixed Parameter value, null if none
      */
     private function getElement($name, $input) {
-        return filter_input($input, $name);
+        $filter = new FilterInput();
+        return $filter->filter($input, $name);
     }
     /**
      * Factorisation method : parameter existance checker for GET, POST and COOKIE parameters
@@ -60,7 +63,7 @@ class HTTPRequest extends Component {
      * @return mixed Cookie value, null if none
      */
     public function cookie($name) {
-        return $this->getElement($name, INPUT_COOKIE);
+        return $this->getElement($name, FilterInput::COOKIE);
     }
     /**
      * Cookie existance checker
@@ -68,7 +71,7 @@ class HTTPRequest extends Component {
      * @return boolean Cookie exists, or not
      */
     public function cookieExists($name) {
-        return $this->hasElement($name, INPUT_COOKIE);
+        return $this->hasElement($name, FilterInput::COOKIE);
     }
     /**
      * GET parameter getter
@@ -76,7 +79,7 @@ class HTTPRequest extends Component {
      * @return mixed Parameter value, null if none
      */
     public function get($name) {
-        return $this->getElement($name, INPUT_GET);
+        return $this->getElement($name, FilterInput::GET);
     }
     /**
      * GET parameter existance checker
@@ -84,7 +87,7 @@ class HTTPRequest extends Component {
      * @return boolean Parameter exists, or not
      */
     public function getExists($name) {
-        return $this->hasElement($name, INPUT_GET);
+        return $this->hasElement($name, FilterInput::GET);
     }
     /**
      * POST parameter getter
@@ -92,7 +95,7 @@ class HTTPRequest extends Component {
      * @return mixed Parameter value, null if none
      */
     public function post($name) {
-        return $this->getElement($name, INPUT_POST);
+        return $this->getElement($name, FilterInput::POST);
     }
     /**
      * POST parameter existance checker
@@ -100,7 +103,7 @@ class HTTPRequest extends Component {
      * @return boolean Parameter exists, or not
      */
     public function postExists($name) {
-        return $this->hasElement($name, INPUT_POST);
+        return $this->hasElement($name, FilterInput::POST);
     }
     /**
      * URL-detected parameter getter

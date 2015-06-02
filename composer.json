@@ -15,6 +15,7 @@
     "require": {
         "PHP": ">=5.3",
         "sntools/core": "*",
+        "sntools/filter": "*",
         "twig/twig": "*"
     },
     "autoload": {
