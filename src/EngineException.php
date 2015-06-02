@@ -4,6 +4,6 @@ namespace SNTools\Framework;
 /**
  * Engine-level errors
  *
- * @author Darth Killer
+ * @author Samy NAAMANI
  */
 class EngineException extends \RuntimeException {}

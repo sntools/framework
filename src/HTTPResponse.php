@@ -7,7 +7,7 @@ namespace SNTools\Framework;
  * Used as an array, sets up parameters avilable within Twig views
  * Can either send to client a Twig view, or a JSON-encoded response
  *
- * @author Darth Killer
+ * @author Samy NAAMANI
  * @version 2.0-dev
  * @todo Add HTTP Response codes as class constants
  */

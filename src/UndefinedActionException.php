@@ -4,7 +4,7 @@ namespace SNTools\Framework;
 /**
  * Attempted to call an undefined action
  *
- * @author Darth Killer
+ * @author Samy NAAMANI
  * @version 2.0-dev
  */
 class UndefinedActionException extends ConfigurationException {

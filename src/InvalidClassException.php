@@ -4,7 +4,7 @@ namespace SNTools\Framework;
 /**
  * Invalid template class detected in configuration
  *
- * @author Darth Killer
+ * @author Samy NAAMANI
  * @version 2.0-dev
  */
 class InvalidClassException extends ConfigurationException {

@@ -4,7 +4,7 @@ namespace SNTools\Framework;
 /**
  * Invalid Directory detected from configuration
  *
- * @author Darth Killer
+ * @author Samy NAAMANI
  * @version 2.0-dev
  */
 class InvalidDirectoryException extends ConfigurationException {

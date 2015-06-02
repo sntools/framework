@@ -6,7 +6,7 @@ use SNTools\Filter\FilterInput;
 /**
  * Framework engine
  *
- * @author Darth Killer
+ * @author Samy NAAMANI
  * @version 2.0-dev
  */
 final class Engine {

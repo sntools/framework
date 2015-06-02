@@ -5,7 +5,7 @@ use SNTools\Framework\BackController;
 /**
  * Description of Controller404
  *
- * @author Darth Killer
+ * @author Samy NAAMANI
  */
 class Controller404 extends BackController {
     /**

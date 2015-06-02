@@ -4,7 +4,7 @@ namespace SNTools\Framework;
 /**
  * Configuration error detected
  *
- * @author Darth Killer
+ * @author Samy NAAMANI
  * @version 2.0-dev
  */
 class ConfigurationException extends \RuntimeException {}
