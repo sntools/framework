@@ -10,6 +10,8 @@
             "email": "samy@namani.net"
         }
     ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "PHP": ">=5.3",
         "sntools/core": "*",
