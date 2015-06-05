@@ -5,7 +5,7 @@ use SNTools\Object;
 /**
  * Common behavior of application components
  *
- * @author Samy NAAMANI
+ * @author Samy Naamani
  * @version 2.0-dev
  * @property-read Application $app Parent application
  */

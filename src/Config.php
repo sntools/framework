@@ -6,7 +6,7 @@ use SNTools\Filter\FilterInput;
  * Application configuration descriptor.
  * Use as an array to access application-specific parameters.
  *
- * @author Samy NAAMANI
+ * @author Samy Naamani
  * @version 2.0-dev
  * @property-read array $twig_dirs
  * @property-read array $twig_options

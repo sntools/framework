@@ -4,7 +4,7 @@ namespace SNTools\Framework;
 /**
  * Superclass for all controllers
  *
- * @author Samy NAAMANI
+ * @author Samy Naamani
  * @version 2.0-dev
  * @property-read string $module Module name
  * @property-read string $action Action to perform

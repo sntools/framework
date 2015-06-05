@@ -4,7 +4,7 @@ namespace SNTools\Framework;
 /**
  * Route descriptor. Also checks if requested url matches expected url.
  *
- * @author Samy NAAMANI
+ * @author Samy Naamani
  * @version 2.0-dev
  * @property-read string $controller Controller class name (with namespace) to use with this route
  * @property-read string $action Controller action to call with this route

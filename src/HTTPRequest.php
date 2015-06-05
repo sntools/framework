@@ -7,7 +7,7 @@ use SNTools\Filter\FilterInput;
  * Handles various types of parameters (GET, POST, COOKIE, URL-detected)
  * Also provides some request metadata
  *
- * @author Samy NAAMANI
+ * @author Samy Naamani
  * @version 2.0-dev
  * @property-read string $method Request method used
  * @property-read string $uri Request URI

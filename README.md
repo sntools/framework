@@ -41,7 +41,7 @@ Unit tests have been provided, using PHPUnit, in the tests/ subfolder.
 
 # Contributors
 
-Samy NAAMANI <samy@namani.net>
+Samy Naamani <samy@namani.net>
 
 # License
 

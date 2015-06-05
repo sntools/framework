@@ -5,7 +5,7 @@ use SNTools\Framework\Application;
 /**
  * Fallback application, used by the framework engine when an error is beyond normal applications' reach
  *
- * @author Samy NAAMANI
+ * @author Samy Naamani
  * @version 2.0-dev
  */
 class FallbackApp extends Application {

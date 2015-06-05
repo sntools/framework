@@ -4,7 +4,7 @@ namespace SNTools\Framework;
 /**
  * Class could not be found
  *
- * @author Samy NAAMANI
+ * @author Samy Naamani
  * @version 2.0-dev
  */
 class ClassNotFoundException extends ConfigurationException {
