@@ -1,5 +1,6 @@
 <?php
 namespace SNTools\Framework;
+use SNTools\Filter\FilterInput;
 use SNTools\Server;
 
 /**

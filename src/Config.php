@@ -1,6 +1,6 @@
 <?php
 namespace SNTools\Framework;
-use SNTools\Filter\FilterInput;
+use SNTools\Server;
 
 /**
  * Application configuration descriptor.
@@ -65,8 +65,8 @@ final class Config extends Component implements \IteratorAggregate, \ArrayAccess
                 $prefix = $this->app->applicationDir();
                 break;
             case self::PATHDIR_DOCROOT:
-                $filter = new FilterInput();
-                $prefix = $filter->filter(FilterInput::SERVER, 'DOCUMENT_ROOT');
+                $server = new Server();
+                $prefix = $server['DOCUMENT_ROOT'];
                 break;
             case self::PATHDIR_NONE:
             default:
