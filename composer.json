@@ -14,7 +14,7 @@
     "prefer-stable": true,
     "require": {
         "PHP": ">=5.3",
-        "sntools/core": "*",
+        "sntools/core": ">=1.1",
         "sntools/filter": "*",
         "twig/twig": "*"
     },

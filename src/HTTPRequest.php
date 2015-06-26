@@ -1,6 +1,6 @@
 <?php
 namespace SNTools\Framework;
-use SNTools\Filter\FilterInput;
+use SNTools\Server;
 
 /**
  * HTTP Request descriptor.
@@ -20,6 +20,16 @@ class HTTPRequest extends Component {
      */
     private $_params = array();
     /**
+     *
+     * @var Server 
+     */
+    private $server;
+
+    public function __construct(Application $app) {
+        parent::__construct($app);
+        $this->server = new Server();
+    }
+    /**
      * Property getters handler
      * @param string $name Property name
      * @return mixed Property value
@@ -30,9 +40,9 @@ class HTTPRequest extends Component {
         $filter = new FilterInput();
         switch($name) {
             case 'method':
-                return $filter->filter(FilterInput::SERVER, 'REQUEST_METHOD');
+                return $this->server['REQUEST_METHOD'];
             case 'uri':
-                return $filter->filter(FilterInput::SERVER, 'REQUEST_URI');
+                return $this->server['REQUEST_URI'];
             default:
                 return parent::__get($name);
         }
