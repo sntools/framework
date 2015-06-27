@@ -9,7 +9,7 @@ This particular package brings the Man-Machine Interface framework : MVC-oriente
 The easiest way to download the core tools is through Composer. Simply add the following to your composer requirements, where "~1.0" can be replaced by any version you need :
 
 ```
-"sntools/framework": "~1.0"
+"sntools/framework": "*"
 ```
 
 # The idea behind the interface framework
@@ -31,13 +31,15 @@ coming soon
 
 # API Reference
 
-More detailed documentation is avilable as HTML files, in the docs/ subfolder.
+To generate the documentation, use the apigen.neon file to generate it in a "docs" folder
 
-coming soon
+```
+> apigen generate
+```
 
 # Testing
 
-Unit tests have been provided, using PHPUnit, in the tests/ subfolder.
+Coming soon in /tests subfolder...
 
 # Contributors
 
