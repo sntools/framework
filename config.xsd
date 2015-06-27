@@ -9,166 +9,186 @@
             <xs:documentation>Host to detect</xs:documentation>
           </xs:annotation>
           <xs:complexType>
-            <xs:sequence>
-              <xs:element minOccurs="0" maxOccurs="unbounded" name="application">
-                <xs:annotation>
-                  <xs:documentation>Application configuration</xs:documentation>
-                </xs:annotation>
+            <xs:all>
+              <xs:element minOccurs="0" name="applications">
                 <xs:complexType>
-                  <xs:all>
-                    <xs:element name="config">
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="application">
                       <xs:annotation>
                         <xs:documentation>Application configuration</xs:documentation>
                       </xs:annotation>
                       <xs:complexType>
                         <xs:all>
-                          <xs:element name="twig">
+                          <xs:element name="config">
                             <xs:annotation>
-                              <xs:documentation>Twig-oriented configuration</xs:documentation>
+                              <xs:documentation>Application configuration</xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
-                              <xs:sequence>
-                                <xs:element maxOccurs="unbounded" name="template_dir">
+                              <xs:all>
+                                <xs:element name="twig">
                                   <xs:annotation>
-                                    <xs:documentation>Directory to use as template directory</xs:documentation>
+                                    <xs:documentation>Twig-oriented configuration</xs:documentation>
                                   </xs:annotation>
                                   <xs:complexType>
-                                    <xs:simpleContent>
-                                      <xs:extension base="xs:string">
-                                        <xs:attribute name="relative" type="pathType">
-                                          <xs:annotation>
-                                            <xs:documentation>relative path strategy</xs:documentation>
-                                          </xs:annotation>
-                                        </xs:attribute>
-                                      </xs:extension>
-                                    </xs:simpleContent>
-                                  </xs:complexType>
-                                </xs:element>
-                                <xs:element minOccurs="0" name="cache_dir">
-                                  <xs:annotation>
-                                    <xs:documentation>directory to use with Twig for cache</xs:documentation>
-                                  </xs:annotation>
-                                  <xs:complexType>
-                                    <xs:simpleContent>
-                                      <xs:extension base="xs:string">
-                                        <xs:attribute name="relative" type="pathType">
-                                          <xs:annotation>
-                                            <xs:documentation>relative path strategy</xs:documentation>
-                                          </xs:annotation>
-                                        </xs:attribute>
-                                      </xs:extension>
-                                    </xs:simpleContent>
-                                  </xs:complexType>
-                                </xs:element>
-                              </xs:sequence>
-                              <xs:attribute name="charset" type="xs:string">
-                                <xs:annotation>
-                                  <xs:documentation>Charset to use with Twig. Defaults to utf-8</xs:documentation>
-                                </xs:annotation>
-                              </xs:attribute>
-                              <xs:attribute name="debug" type="xs:boolean">
-                                <xs:annotation>
-                                  <xs:documentation>Debug mode, optionnal</xs:documentation>
-                                </xs:annotation>
-                              </xs:attribute>
-                              <xs:attribute name="base-template-class" type="xs:string">
-                                <xs:annotation>
-                                  <xs:documentation>Name of PHP class to use as template class, instead of Twig_Template</xs:documentation>
-                                </xs:annotation>
-                              </xs:attribute>
-                              <xs:attribute name="auto-reload" type="xs:boolean">
-                                <xs:annotation>
-                                  <xs:documentation>activate reload of documents when source is modified</xs:documentation>
-                                </xs:annotation>
-                              </xs:attribute>
-                              <xs:attribute name="autoescape" type="xs:string">
-                                <xs:annotation>
-                                  <xs:documentation>autoescape strategy.
+                                    <xs:all>
+                                      <xs:element minOccurs="0" name="cache_dir">
+                                        <xs:annotation>
+                                          <xs:documentation>directory to use with Twig for cache</xs:documentation>
+                                        </xs:annotation>
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute name="relative" type="pathType">
+                                                <xs:annotation>
+                                                  <xs:documentation>relative path strategy</xs:documentation>
+                                                </xs:annotation>
+                                              </xs:attribute>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="tpl_dirs">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element maxOccurs="unbounded" name="tpl_dir">
+                                              <xs:annotation>
+                                                <xs:documentation>Directory to use as template directory</xs:documentation>
+                                              </xs:annotation>
+                                              <xs:complexType>
+                                                <xs:simpleContent>
+                                                  <xs:extension base="xs:string">
+                                                    <xs:attribute name="relative" type="pathType">
+                                                      <xs:annotation>
+                                                        <xs:documentation>relative path strategy</xs:documentation>
+                                                      </xs:annotation>
+                                                    </xs:attribute>
+                                                  </xs:extension>
+                                                </xs:simpleContent>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:all>
+                                    <xs:attribute name="charset" type="xs:string">
+                                      <xs:annotation>
+                                        <xs:documentation>Charset to use with Twig. Defaults to utf-8</xs:documentation>
+                                      </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="debug" type="xs:boolean">
+                                      <xs:annotation>
+                                        <xs:documentation>Debug mode, optionnal</xs:documentation>
+                                      </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="base-template-class" type="xs:string">
+                                      <xs:annotation>
+                                        <xs:documentation>Name of PHP class to use as template class, instead of Twig_Template</xs:documentation>
+                                      </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="auto-reload" type="xs:boolean">
+                                      <xs:annotation>
+                                        <xs:documentation>activate reload of documents when source is modified</xs:documentation>
+                                      </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="autoescape" type="xs:string">
+                                      <xs:annotation>
+                                        <xs:documentation>autoescape strategy.
 Values : html, js, css, url, html_attr, filename, false
 Another possible value : name of a PHP callback</xs:documentation>
-                                </xs:annotation>
-                              </xs:attribute>
-                            </xs:complexType>
-                          </xs:element>
-                          <xs:element minOccurs="0" name="parameters">
-                            <xs:annotation>
-                              <xs:documentation>Additionnal application configuration parameters</xs:documentation>
-                            </xs:annotation>
-                            <xs:complexType>
-                              <xs:sequence>
-                                <xs:element maxOccurs="unbounded" name="parameter">
-                                  <xs:annotation>
-                                    <xs:documentation>Configuration parameter</xs:documentation>
-                                  </xs:annotation>
-                                  <xs:complexType>
-                                    <xs:simpleContent>
-                                      <xs:extension base="xs:anySimpleType">
-                                        <xs:attribute name="name" type="xs:string" use="required" />
-                                      </xs:extension>
-                                    </xs:simpleContent>
+                                      </xs:annotation>
+                                    </xs:attribute>
                                   </xs:complexType>
                                 </xs:element>
-                              </xs:sequence>
+                                <xs:element minOccurs="0" name="parameters">
+                                  <xs:annotation>
+                                    <xs:documentation>Additionnal application configuration parameters</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="parameter">
+                                        <xs:annotation>
+                                          <xs:documentation>Configuration parameter</xs:documentation>
+                                        </xs:annotation>
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:anySimpleType">
+                                              <xs:attribute name="name" type="xs:string" use="required" />
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:all>
                             </xs:complexType>
                           </xs:element>
-                        </xs:all>
-                      </xs:complexType>
-                    </xs:element>
-                    <xs:element name="router">
-                      <xs:annotation>
-                        <xs:documentation>List of routes associated with the application</xs:documentation>
-                      </xs:annotation>
-                      <xs:complexType>
-                        <xs:sequence>
-                          <xs:element minOccurs="0" maxOccurs="unbounded" name="route">
+                          <xs:element name="router">
                             <xs:annotation>
-                              <xs:documentation>Route associated with the application</xs:documentation>
+                              <xs:documentation>List of routes associated with the application</xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
-                              <xs:complexContent mixed="false">
-                                <xs:extension base="routeType">
-                                  <xs:attribute name="url" type="xs:string" use="required">
-                                    <xs:annotation>
-                                      <xs:documentation>URL regexp matching the route.
+                              <xs:all>
+                                <xs:element minOccurs="0" name="error404" type="routeType">
+                                  <xs:annotation>
+                                    <xs:documentation>Special route with no matching url, used to call the error handling controller (pages not found, mostly)</xs:documentation>
+                                  </xs:annotation>
+                                </xs:element>
+                                <xs:element minOccurs="0" name="routes">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="route">
+                                        <xs:annotation>
+                                          <xs:documentation>Route associated with the application</xs:documentation>
+                                        </xs:annotation>
+                                        <xs:complexType>
+                                          <xs:complexContent mixed="false">
+                                            <xs:extension base="routeType">
+                                              <xs:attribute name="url" type="xs:string" use="required">
+                                                <xs:annotation>
+                                                  <xs:documentation>URL regexp matching the route.
 You need to write the full path, including the application prefix if any. The engine will add PCRE delimiters (#) and anchors (^ and $)
 Example : /myapp/folder/news-(\d+)\.html
 Regexp formed by the engine : #^/myapp/folder/news-(\d+)\.html$#U
 Recognized URL : http://mydomain/myapp/folder/news-125.html</xs:documentation>
-                                    </xs:annotation>
-                                  </xs:attribute>
-                                </xs:extension>
-                              </xs:complexContent>
+                                                </xs:annotation>
+                                              </xs:attribute>
+                                            </xs:extension>
+                                          </xs:complexContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:all>
                             </xs:complexType>
                           </xs:element>
-                          <xs:element minOccurs="0" name="error404" type="routeType">
-                            <xs:annotation>
-                              <xs:documentation>Special route with no matching url, used to call the error handling controller (pages not found, mostly)</xs:documentation>
-                            </xs:annotation>
-                          </xs:element>
-                        </xs:sequence>
-                      </xs:complexType>
-                    </xs:element>
-                  </xs:all>
-                  <xs:attribute name="class" type="xs:string" use="required">
-                    <xs:annotation>
-                      <xs:documentation>PHP class name (with namespace) of the application</xs:documentation>
-                    </xs:annotation>
-                  </xs:attribute>
-                  <xs:attribute name="url-prefix" type="xs:string">
-                    <xs:annotation>
-                      <xs:documentation>URL prefix to detect for this application. 
+                        </xs:all>
+                        <xs:attribute name="class" type="xs:string" use="required">
+                          <xs:annotation>
+                            <xs:documentation>PHP class name (with namespace) of the application</xs:documentation>
+                          </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute name="url-prefix" type="xs:string">
+                          <xs:annotation>
+                            <xs:documentation>URL prefix to detect for this application. 
 Will look for URL paths that begin with this prefix.
 Defaults to '/'</xs:documentation>
-                    </xs:annotation>
-                  </xs:attribute>
+                          </xs:annotation>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
                 </xs:complexType>
               </xs:element>
-            </xs:sequence>
-            <xs:attribute name="domain" type="xs:string" use="required">
-              <xs:annotation>
-                <xs:documentation>Domain of the Host</xs:documentation>
-              </xs:annotation>
-            </xs:attribute>
+              <xs:element name="domains">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="domain" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:all>
             <xs:attribute name="https" type="xs:boolean">
               <xs:annotation>
                 <xs:documentation>Optionnal : this host uses HTTPS.

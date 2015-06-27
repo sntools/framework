@@ -75,11 +75,11 @@ final class Engine {
      */
     private static function getApp() {
         $server = new Server();
-        foreach(self::$xpath->query(sprintf("//host[@domain='%s']", $server['SERVER_NAME'])) as $host) {
+        foreach(self::$xpath->query(sprintf("//host[domains/domain/text()='%s']", $server['SERVER_NAME'])) as $host) {
             /* @var $host \DOMElement */
             $expectHTTPS = ($host->hasAttribute('https') and $host->getAttribute('https'));
             if(!($server['REQUEST_SCHEME'] == 'https' xor $expectHTTPS)) {
-                foreach(self::$xpath->query('application', $host) as $appNode) {
+                foreach(self::$xpath->query('applications/application', $host) as $appNode) {
                     /* @var $appNode \DOMElement */
                     $regex = sprintf('#^%s#', $appNode->hasAttribute('url-prefix') ? $appNode->getAttribute('url-prefix') : '/');
                     if(preg_match($regex, $server['REQUEST_URI'])) {
@@ -96,7 +96,7 @@ final class Engine {
                             /* @var $optionAttribute \DOMAttr */
                             $app->config->addOption($optionAttribute->name, $optionAttribute->value);
                         }
-                        foreach(self::$xpath->query('template_dir', $twigNode) as $dirNode) {
+                        foreach(self::$xpath->query('tpl_dirs/tpl_dir', $twigNode) as $dirNode) {
                             /* @var $dirNode \DOMElement */
                             $app->config->addDir($dirNode->textContent, $dirNode->hasAttribute('relative') ? $dirNode->getAttribute('relative') : null);
                         }
@@ -113,7 +113,7 @@ final class Engine {
                         }
                         
                         
-                        foreach(self::$xpath->query('router/route', $appNode) as $routeNode) {
+                        foreach(self::$xpath->query('router/routes/route', $appNode) as $routeNode) {
                             /* @var $routeNode \DOMElement */
                             $app->addRoute(self::routeBuilder($app, $routeNode, $routeNode->getAttribute('url')));
                         }
