@@ -73,8 +73,9 @@ final class Config extends Component implements \IteratorAggregate, \ArrayAccess
                 $prefix = '';
                 break;
         }
-        if('/' != substr($dir, 0, 1))
-            $dir = sprintf('%s/%s', $prefix, $dir);
+        $dir = sprintf('%s/%s', $prefix, ltrim($dir, '/'));
+//        if('/' != substr($dir, 0, 1))
+//            $dir = sprintf('%s/%s', $prefix, $dir);
         if(file_exists($dir)) {
             if($isCacheDir) $this->_twig_options['cache'] = $dir;
             else $this->_twig_dirs[] = $dir;
