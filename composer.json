@@ -31,5 +31,10 @@
         "psr-4": {
             "SNTools\\Types\\Tests\\": "tests/"
         }
+    },
+    "config": {
+        "platform": {
+            "php": "5.3"
+        }
     }
 }
