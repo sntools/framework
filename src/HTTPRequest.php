@@ -1,6 +1,5 @@
 <?php
 namespace SNTools\Framework;
-use SNTools\Server;
 
 /**
  * HTTP Request descriptor.
@@ -19,16 +18,7 @@ class HTTPRequest extends Component {
      * @var array
      */
     private $_params = array();
-    /**
-     *
-     * @var Server 
-     */
-    private $server;
 
-    public function __construct(Application $app) {
-        parent::__construct($app);
-        $this->server = new Server();
-    }
     /**
      * Property getters handler
      * @param string $name Property name
@@ -39,9 +29,9 @@ class HTTPRequest extends Component {
     public function __get($name) {
         switch($name) {
             case 'method':
-                return $this->server['REQUEST_METHOD'];
+                return filter_input(INPUT_SERVER, 'REQUEST_METHOD');
             case 'uri':
-                return $this->server['REQUEST_URI'];
+                return filter_input(INPUT_SERVER, 'REQUEST_URI');
             default:
                 return parent::__get($name);
         }
