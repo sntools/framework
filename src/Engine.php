@@ -1,7 +1,6 @@
 <?php
 namespace SNTools\Framework;
 use SNTools\Framework\Fallback\FallbackApp;
-use SNTools\Server;
 
 /**
  * Framework engine
@@ -74,15 +73,14 @@ final class Engine {
      * @throws NoRouteException
      */
     private static function getApp() {
-        $server = new Server();
-        foreach(self::$xpath->query(sprintf("//host[domains/domain/text()='%s']", $server['SERVER_NAME'])) as $host) {
+        foreach(self::$xpath->query(sprintf("//host[domains/domain/text()='%s']", filter_input(INPUT_SERVER, 'SERVER_NAME'))) as $host) {
             /* @var $host \DOMElement */
             $expectHTTPS = ($host->hasAttribute('https') and $host->getAttribute('https'));
-            if(!($server['REQUEST_SCHEME'] == 'https' xor $expectHTTPS)) {
+            if(!(filter_input(INPUT_SERVER, 'REQUEST_SCHEME') == 'https' xor $expectHTTPS)) {
                 foreach(self::$xpath->query('applications/application', $host) as $appNode) {
                     /* @var $appNode \DOMElement */
                     $regex = sprintf('#^%s#', $appNode->hasAttribute('url-prefix') ? $appNode->getAttribute('url-prefix') : '/');
-                    if(preg_match($regex, $server['REQUEST_URI'])) {
+                    if(preg_match($regex, filter_input(INPUT_SERVER, 'REQUEST_URI'))) {
                         if(!class_exists($classname = $appNode->getAttribute('class')))
                             throw new ClassNotFoundException($classname);
                         if(!is_subclass_of($classname, '\SNTools\Framework\Application'))
